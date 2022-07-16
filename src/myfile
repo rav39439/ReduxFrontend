@@ -1,0 +1,22 @@
+React render:
+
+
+whenever a variable rendered as prop to react child element changes then parent element and child element both rerenders.
+
+rerender phase: In this phase we have components flagged and their jsx elements are converted into react elements. After the conversion is done new element to be rendered  is compared with initial render elements if any changes are detected then a list of changes is formed and then it is reflected in the dom elements(commit phase).
+
+usestate: In this situation any state declared using use state makes the component rerender whenever that state changes.Also if we declare some new elements containing the initial state then it would not trigger rerender.And if declare some new react elements containing state  and change it to a value which is equal to the value of preexsiting state then react elements would rerender only once when the value becomes equal to preexisting value.
+
+Immutablility :If you define a object as initial state and then create a new state refering the same object as initial state and then try to change the state using the function then you have to create a new object to do this other wise no change in state would take place . After creating the new object assign the parameter values to the object and set the state of  the object to that new object.creating the new object:
+const initalobj=useState[initalstate,newstate]
+const obj=new (...initalobj) assign values.
+
+In array do the same thing define the inital state of the array ['Bruce','wayne'] assign this to a useState variable . Then create a new array using the useState variable.After doing this , push the new elements to that array.And finally set the state and map all array values.
+
+To prevent rerender wrap the child component inside the parent component in App.js and pass the child as prop to the parent componnent and use it in there. THis would prevent the rerendering of the child component if no change has taken place in child component and parent component has undergone change due to change in useState variable.
+
+when a single state suppose name is passed as prop to child component from parent component in react and there is another state in parent component suppose count if name doues not change but count changes then parent and child component are rerendered . To prevent this we wrap the send the memoinizedversion of child component to parent component using React.memo.If we pass an object or fuction created in parent component as prop to memoized child component then using React.memo will not work and both the parent and child class would be rerendered once the state in parent component is changed.
+
+If we pass the children containing html elements in memoizedchild class in parent component , then we receive this children  as prop in child class and use there then React.memo of child class will not work and both component will be rerendered when the parent component is rerendered.React memeo will also not work if we use any function such as date.
+
+If we have parent component having three child components supppose A , B , C  we send the value suppose count to C using context or createContext and passing this value to first child A using provider . This is value  is nothing but the state in parent class that can be changed in parent class. If value of count in parent component undergoes change then all the child components are rerendered. WE can prevent this from happening using React.memo(child A) and then accessing it in parent class and passing the value count but this time to memoiZedchild A.WE can also prevent the unnecessary render of child component A and B by passing the child A in APP .js as children to the parent component and then accessing it as a child prop in parent component and then creating context and passing using provider the value to child C using context consumer
