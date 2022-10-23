@@ -170,7 +170,7 @@ this.props.adddish(e.target.children[0].children[1].value,e.target.children[1].c
   <input type="text" name="name"class="form-control" id="exampleFormControlInput1"style={{width:"400px"}} value={this.state.username} onChange={this.handleInputChange}placeholder="Username"/>
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Image</label>
+  <label for="exampleFormControlInput1" class="form-label">Image address</label>
   <input type="text" name="image"class="form-control" id="exampleFormControlInput1"style={{width:"400px"}}value={this.state.views} onChange={this.handleInputChange}placeholder="views"/>
 </div>
 <div class="mb-3">
@@ -242,7 +242,7 @@ this.props.adddish(e.target.children[0].children[1].value,e.target.children[1].c
   <input type="text" name="name"class="form-control" id="exampleFormControlInput1"style={{width:"400px"}} value={this.state.username} onChange={this.handleInputChange}placeholder="Username"/>
 </div>
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Image</label>
+  <label for="exampleFormControlInput1" class="form-label">Image address</label>
   <input type="text" name="image"class="form-control" id="exampleFormControlInput1"style={{width:"400px"}}value={this.state.views} onChange={this.handleInputChange}placeholder="views"/>
 </div>
 <div class="mb-3">
